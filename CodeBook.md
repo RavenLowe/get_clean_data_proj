@@ -17,11 +17,11 @@ The following lines describe each variable, column number, type of data and rang
 
 1. Subject
 
-* Subjects that perform a set of activities in the experiment.  [1,30] . Integer values representing a person.
+  * Subjects that perform a set of activities in the experiment.  [1,30] . Integer values representing a person.
 
 2. Activity
 
-* Activities performed by the test and training subjects. [LAYING, SITTING, STANDING, WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS]. String values representing a activity.
+  * Activities performed by the test and training subjects. [LAYING, SITTING, STANDING, WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS]. String values representing a activity.
 
 3. Time.BodyAcc.Mean.X
 
