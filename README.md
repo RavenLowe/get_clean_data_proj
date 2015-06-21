@@ -1,4 +1,4 @@
-
+ 
 This github project contains the work to accomplish the project assignment of "Getting and Cleaning Data".
 The purpose of this project is to work with, clean a data set so as to be used for later analysis.
 
