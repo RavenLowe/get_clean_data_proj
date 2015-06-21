@@ -14,7 +14,7 @@ read.table("tidyDataSet.txt", header=TRUE)
 
 # How does the script work?
 
-1.  Merges the training and the test sets to create one data set
+##1  Merges the training and the test sets to create one data set
 
 1.1 clip the training data sets together (activity, subject, reading)
 > training <- data.frame()
@@ -31,7 +31,7 @@ read.table("tidyDataSet.txt", header=TRUE)
 > colnames(step1) <- c("activity_id", "Subject", as.character(read.table(file="~/UCI_HAR_Dataset/features.txt")[,2]))
 
 
-2.  Extract only the measurements on the mean and standard deviation
+##2  Extract only the measurements on the mean and standard deviation
 
 2.1 Select the variables containing mean() and std()
 > half_extracted <- step1[, c(grep("activity_id|Subject|mean()|std()", names(step1)))]
@@ -40,7 +40,7 @@ read.table("tidyDataSet.txt", header=TRUE)
 > step2 <- half_extracted[, -c(grep("meanFreq()", names(half_extracted)))]
 
 
-3.  Replace activity id by descriptive names
+##3  Replace activity id by descriptive names
 
 3.1 load the activity_labels file
 > act_label <- read.table(file="~/UCI_HAR_Dataset/activity_labels.txt")
@@ -55,7 +55,7 @@ read.table("tidyDataSet.txt", header=TRUE)
 > step3 <- select(step2_add_names, -activity_id)
 
 
-4  Modify the column names with descriptive names by replacing characters
+##4  Modify the column names with descriptive names by replacing characters
 
 4.1 Clean up "()-" with "."
 > colnames4 <- gsub("\\()-", ".", colnames(step3))
@@ -85,7 +85,7 @@ colnames4 <- gsub("tGravity", "Time.Gravity", colnames4)
 > colnames(step3) <- colnames4
 
 
-5. Create a second, independent tidy data set with the average of each variable
+##5 Create a second, independent tidy data set with the average of each variable
 
 5.1 add the prefix "Average." to be in line with the summarized nature of new data set
 > step5 <- step3
@@ -98,4 +98,3 @@ colnames4 <- gsub("tGravity", "Time.Gravity", colnames4)
 
 5.3 Export the output in the required text file format
 > write.table(step5, file="tidyDataSet.txt", sep="\t", row.names=FALSE)
-
